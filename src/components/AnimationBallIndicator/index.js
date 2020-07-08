@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { StyleSheet, Image, View, Animated, TouchableWithoutFeedback, Easing } from "react-native";
 import logo from '../../../assets/ball.png';
 
-export default function AnimationBall() {
+export default function AnimationBallIndicator() {
 
     const animation = new Animated.Value(0)
     const marginBotton = useRef(new Animated.Value(100)).current;
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
         position:'absolute',
         alignItems: "center",
         justifyContent: "center",
-        paddingTop:150,
         alignSelf:'center',
 
     },
