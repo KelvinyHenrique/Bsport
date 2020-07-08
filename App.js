@@ -13,6 +13,7 @@ import {
   StatusBar,
   View,
   Animated,
+  Image
 } from 'react-native';
 
 import {
@@ -25,6 +26,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { WebView } from 'react-native-webview';
 import AnimationBall from './src/components/AnimationBall';
+import bg from './assets/bg.png';
+
 
 const App: () => React$Node = () => {
 
@@ -46,8 +49,10 @@ const App: () => React$Node = () => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content"  backgroundColor="#FFF"/>
+      <StatusBar barStyle="light-content"  backgroundColor="#353535"/>
       <View style={{width:'100%', height:'100%', backgroundColor:'#000', display:isLoaded, alignItems:'center', justifyContent:'center'}}>
+      <Image source={bg} style={{width:"100%", height:'100%'}} />
+        
       <AnimationBall/>
       </View>
       <WebView
