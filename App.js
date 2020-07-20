@@ -28,7 +28,7 @@ import Back from './assets/back.svg';
 import Next from './assets/next.svg';
 
 
-const App: () => React$Node = () => {
+const App: () => React$Node = ({navigate}) => {
 
   const [isLoaded, setLoaded] = useState('flex');
   const [isLoading, setLoading] = useState(false);
@@ -39,7 +39,9 @@ const App: () => React$Node = () => {
   const [canGoForward, setCanGoForward] = useState(false)
   const [currentUrl, setCurrentUrl] = useState('');
   const [showTabBar, setShowTabBar] = useState(false);
+  const [webUrl, setWebUrl]= useState('https://www.bsport.com.br/');
 
+  
 
   const fadeIn = () => {
 
@@ -70,6 +72,11 @@ const App: () => React$Node = () => {
     }
   }
 
+  const handleGoCart = () =>{
+    if (webviewRef.current) webviewRef.current.setCurrentUrl('https://www.bsport.com.br/checkout/cart/');
+  }
+
+
 
 
   const backButtonHandler = () => {
@@ -93,7 +100,7 @@ const App: () => React$Node = () => {
       </View>
       <WebView
         source={{
-          uri: 'https://superirmao.loji.com.br/'
+          uri: webUrl
         }}
         style={{ marginTop: 20 }}
         onLoadEnd={handleEndLoading}
@@ -117,7 +124,7 @@ const App: () => React$Node = () => {
         <TouchableOpacity onPress={backButtonHandler}>
           <Next width={30} height={30} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ball}>
+        <TouchableOpacity style={styles.ball} onPress={handleGoCart}>
           <Cart width={35} height={35} />
         </TouchableOpacity>
         <TouchableOpacity onPress={backButtonHandler}>
