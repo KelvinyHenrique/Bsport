@@ -73,7 +73,7 @@ const App: () => React$Node = ({navigate}) => {
   }
 
   const handleGoCart = () =>{
-    if (webviewRef.current) webviewRef.current.setCurrentUrl('https://www.bsport.com.br/checkout/cart/');
+   setCurrentUrl('https://www.bsport.com.br/checkout/cart/');
   }
 
 
