@@ -28,7 +28,7 @@ import Back from './assets/back.svg';
 import Next from './assets/next.svg';
 
 
-const App: () => React$Node = ({navigate}) => {
+const App  = () => {
 
   const [isLoaded, setLoaded] = useState('flex');
   const [isLoading, setLoading] = useState(false);
@@ -120,7 +120,7 @@ const App: () => React$Node = ({navigate}) => {
 
       }
 
-     {showTabBar && <View style={styles.tabBarContainer}>
+   {/*   {showTabBar && <View style={styles.tabBarContainer}>
         <TouchableOpacity onPress={backButtonHandler}>
           <Next width={30} height={30} />
         </TouchableOpacity>
@@ -130,7 +130,7 @@ const App: () => React$Node = ({navigate}) => {
         <TouchableOpacity onPress={backButtonHandler}>
           <Back width={30} />
         </TouchableOpacity>
-      </View>}
+      </View>} */}
     </>
   );
 };
